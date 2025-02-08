@@ -8,3 +8,7 @@ class Square(Shape):
 
     def area(self):
         return self.length ** 2
+    
+
+s = Square(7)
+print(s.area())

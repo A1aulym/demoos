@@ -11,4 +11,16 @@ class Point:
         self.y = new_y
 
     def dist(self, other_point):
-        return ((self.x - other_point.x) ** 2 + (self.y - other_point.y) ** 2) ** 0.5
+        f = ((self.x - other_point.x) ** 2 + (self.y - other_point.y) ** 2) ** 0.5
+        print(f)
+        return f
+    
+a = Point (4, 9)
+a.show()
+a.move(3, 8)
+
+
+
+b = Point(6, 8)
+distance = a.dist(b)  
+

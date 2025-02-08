@@ -13,3 +13,9 @@ class Account:
         else:
             self.balance -= amount
             print(f"Withdrawn {amount}. New balance: {self.balance}")
+
+
+g = Account("Mino" , 3000)
+g.deposit(4)
+g.withdraw(890)
+

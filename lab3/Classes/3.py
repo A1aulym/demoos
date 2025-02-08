@@ -9,3 +9,6 @@ class Rectangle(Shape):
 
     def area(self):
         return self.length * self.width
+    
+d = Rectangle(9, 11)
+print(d.area())

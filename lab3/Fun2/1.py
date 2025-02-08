@@ -19,17 +19,35 @@ movies = [
 def is_highly_rated(movie):
     return movie["imdb"] > 5.5
 
-def high_rated_movies(movie_list):
-    return [movie for movie in movie_list if movie["imdb"] > 5.5]
+def high_rated_movies(movies):
+    f = []
+    for movie in movies:
+        if movie["imdb"] > 5.5:
+            f.append(movie)
+    return f
 
-def movies_by_category(category):
-    return [movie for movie in movies if movie["category"].lower() == category.lower()]
+def movies_by_category(movies, category):
+    filtered_by_category_movies = []   
+    for movie in movies:   
+        if movie["category"] == category:   
+            filtered_by_category_movies.append(movie)   
+    return filtered_by_category_movies
+ 
+ 
+def average_imdb(movies):
+    av_imdb = 0   
+    for movie in movies:  
+        av_imdb += movie["imdb"]   
+    return av_imdb / len(movies)   
 
-def average_imdb(movie_list):
-    if not movie_list:
-        return 0
-    return sum(movie["imdb"] for movie in movie_list) / len(movie_list)
+ 
+def average_imdb_by_category(movies, category):
+    category_movies = movies_by_category(movies, category)
+    return average_imdb(category_movies)
 
-def average_imdb_by_category(category):
-    filtered_movies = movies_by_category(category)
-    return average_imdb(filtered_movies)
+ 
+print(is_highly_rated(movies[0]))  
+print(high_rated_movies(movies))   
+print(movies_by_category(movies,"Romance"))   
+print(average_imdb(movies))   
+print(average_imdb_by_category(movies, "Romance"))
