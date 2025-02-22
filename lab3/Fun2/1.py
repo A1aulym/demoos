@@ -27,11 +27,11 @@ def high_rated_movies(movies):
     return f
 
 def movies_by_category(movies, category):
-    filtered_by_category_movies = []   
+    c = []   
     for movie in movies:   
         if movie["category"] == category:   
-            filtered_by_category_movies.append(movie)   
-    return filtered_by_category_movies
+            c.append(movie)   
+    return c
  
  
 def average_imdb(movies):
@@ -48,6 +48,6 @@ def average_imdb_by_category(movies, category):
  
 print(is_highly_rated(movies[0]))  
 print(high_rated_movies(movies))   
-print(movies_by_category(movies,"Romance"))   
+print(movies_by_category(movies,"Drama"))   
 print(average_imdb(movies))   
 print(average_imdb_by_category(movies, "Romance"))

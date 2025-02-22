@@ -6,5 +6,3 @@ thisdict = {
 mydict = thisdict.copy()
 print(mydict)
 
-mydict = dict(thisdict)
-print(mydict)
